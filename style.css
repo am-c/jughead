@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Bangers&family=Graduate&family=Major+Mono+Display&family=Share+Tech+Mono&family=VT323&display=swap');
+
+body {
+  margin: 0;
+}
+
+.am-container {
+   width: 100vw;
+   height: 100vh;
+   margin: 0 auto;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+   overflow: hidden;
+   cursor: default;
+   transition: 0.6s ease-in-out;
+   background: url("bg.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-color:white;
+ }
+
+ h1 {
+  font-family: 'Bangers', sans-serif;
+  position: absolute;
+  transition: 0.6s ease-in-out;
+  z-index: 9;
+  font-size: 5em; 
+  height: 3.5%;
+  left: 40%;
+  bottom: 68%;
+  width: 3.4%;
+  text-anchor: middle;
+  display:none;
+  color: #290a3b;
+  animation: filter-animation 2s infinite;
+}
+
+ .flash{
+  transition: 0.8s ease-in;
+  opacity: .7;
+  background: white;
+ }
+
+ .cloud1 {
+  position: relative;
+ }
+
+ .cloud1 svg path {
+  fill: white;
+}
+
+.wrap {
+  width: 100%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: grayscale(1);
+  font-size: 2em;
+  white-space: nowrap;
+}
+
+input {
+  border: 1px solid yellow;
+  vertical-align: middle;
+  border: none;
+  font-size: 2em;
+  filter: hue-rotate(90deg);
+}
+
+input:focus {
+  outline: none;
+}
+
+label {
+  padding-left: 30%; 
+  font-size: 2em;
+}
+
+input, label {
+  color: #e8ffd8;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Share Tech Mono', monospace;
+  animation: filter-animation 4s infinite;
+  white-space: nowrap; 
+  width: 50%;
+}
+
+.jughead {
+  width: 100%;
+  height: 42vh;
+  top: 5%;
+  right: 0;
+  position: absolute;
+}
+
+.sway {
+  transform-origin: 50% 100% 0;
+  animation: sway 8s linear infinite alternate-reverse;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    transform: scale(.5);
+  }
+
+  label {
+    padding-left: 1%; 
+    font-size: 1.5em;
+  }
+}
+
+
+@keyframes sway {
+  0%, 100%{ transform: rotate(-1deg);}
+  50%{ transform: rotate(1deg); }
+}
+
+
+@keyframes filter-animation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  
+  50% {
+    filter: hue-rotate(100deg);
+  }
+  
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
