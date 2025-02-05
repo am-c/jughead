@@ -2,6 +2,7 @@
 
 body {
   margin: 0;
+  overflow: hidden;
 }
 
 .am-container {
@@ -11,28 +12,31 @@ body {
    -moz-user-select: none;
    -webkit-user-select: none;
    user-select: none;
-   overflow: hidden;
    cursor: default;
    transition: 0.6s ease-in-out;
-   background: url("bg.jpg");
+   background: url("images/bg.jpg");
    background-size: cover;
+   background-position: top;
    background-repeat: no-repeat;
    background-color:white;
  }
 
- h1 {
+ .white {
+/*   background-image: none !important; */
+  transition: 5.5s ease;
+ }
+text {
   font-family: 'Bangers', sans-serif;
-  position: absolute;
   transition: 0.6s ease-in-out;
   z-index: 9;
-  font-size: 5em; 
-  height: 3.5%;
-  left: 40%;
-  bottom: 68%;
-  width: 3.4%;
-  text-anchor: middle;
-  display:none;
-  color: #290a3b;
+  font-size: 2em;
+ /*  display: block;
+  position: relative;
+  top: 12vh;
+  left: 23vw;
+  margin: 0; */
+  display: none; 
+  fill: #9d00f8;
   animation: filter-animation 2s infinite;
 }
 
@@ -43,9 +47,18 @@ body {
  }
 
  .cloud1 {
-  position: relative;
+  position: absolute;
+  /* min-height: 20vh; */
+   position: fixed; 
+  /* height: 50vh; */
+  /* width: 100vw; */
+  top: 10%;
+  left: 0;
+  right: 0;
+  /* transform: scale(4); */
+  margin: 0 auto;
  }
-
+ 
  .cloud1 svg path {
   fill: white;
 }
@@ -57,6 +70,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   backdrop-filter: grayscale(1);
+  -webkit-backdrop-filter: grayscale(1);
   font-size: 2em;
   white-space: nowrap;
 }
@@ -65,7 +79,7 @@ input {
   border: 1px solid yellow;
   vertical-align: middle;
   border: none;
-  font-size: 2em;
+  font-size: 3rem;
   filter: hue-rotate(90deg);
 }
 
@@ -91,10 +105,10 @@ input, label {
 
 .jughead {
   width: 100%;
-  height: 42vh;
   top: 5%;
   right: 0;
   position: absolute;
+  transition: 0.5s ease;
 }
 
 .sway {
@@ -103,10 +117,6 @@ input, label {
 }
 
 @media (max-width: 600px) {
-  h1 {
-    transform: scale(.5);
-  }
-
   label {
     padding-left: 1%; 
     font-size: 1.5em;
@@ -115,8 +125,12 @@ input, label {
 
 
 @keyframes sway {
-  0%, 100%{ transform: rotate(-1deg);}
-  50%{ transform: rotate(1deg); }
+  0%, 100%{ 
+    transform: rotate(-1deg);
+  }
+  50% { 
+    transform: rotate(1deg); 
+  }
 }
 
 
@@ -131,5 +145,38 @@ input, label {
   
   100% {
     filter: hue-rotate(0deg);
+  }
+}
+
+ @media screen and (min-width: 900px) { 
+.jughead {
+  height: 42vh;
+ }
+ }
+@media screen and (max-width: 900px) {
+  .jughead {
+     height: 60vw; 
+    min-height: 20vh; 
+  }
+  .cloud1 svg {
+    height: 60vh;
+    width: 100vw;
+    transform: scale(1.5);
+    position: fixed;
+}
+
+}
+
+@keyframes cloud-animation {
+  0% {
+    transform: scale(0.5) translateX(-50px) translateY(20px) !important;
+  }
+  
+  50% {
+    filter: hue-rotate(100deg);
+  }
+  
+  100% {
+    transform: scale(1.5) translateX(-50px) translateY(20px) !important;
   }
 }

@@ -22,9 +22,8 @@ function sceneTwo() {
 
   return tl;
 }
-//bomb animation
+// bomb animation
 master.add(sceneTwo(), "-=0.3");
-
   $(".jughead").click(function() {
     $(".jughead").addClass("sway");
     setTimeout(() => {
@@ -40,13 +39,16 @@ master.add(sceneTwo(), "-=0.3");
       setTimeout(() => {
         $(".jughead").hide();
         $(".wrap").hide();
-        $("h1").show();
+        $("text").show();
        // $(".am-container").addClass("flash");
          basicTimeline.play();
        }, 2000);
        setTimeout(() => {
-        $(".am-container").css({"background-image": "url(bg3.jpg)"});
+        $(".am-container").css({"background-image": "url(images/bg3.jpg)"});
        }, 2200);
+       setTimeout(() => {
+        $(".am-container").addClass('white');
+       }, 3000);
   } 
   })
 
@@ -56,8 +58,8 @@ basicTimeline
   targets: '.cloud',
   opacity:[0,1],
   scale: [0.5, 1.2],
-  translateX: 10, 
-   translateY: 20,
+  translateX: -50 + 'px',
+  translateY: 50 + 'px', 
   easing: 'linear', 
   duration: 400
 })
